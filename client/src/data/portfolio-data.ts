@@ -47,8 +47,8 @@ export const portfolioData = {
 ],
 "liveUrl": "https://cvcraft-2fz1.onrender.com",
 "githubUrl": "https://github.com/KartikSharma4448/CVCraft",
-"imageUrl": "",
-"featured": true,
+"imageUrl": "https://media.licdn.com/dms/image/v2/D5622AQHVs7Spe4xPRA/feedshare-shrink_800/B56Z6DwL5lJ0Ac-/0/1780326907842?e=1781740800&v=beta&t=IQdIRzZa-0IJElek7Fckw29Tpz4PEHxQJ-XTflzj6Tw",
+"featured": "true",
 "order": 0,
 "createdAt": "2026-05-31T00:00:00.000Z"
 },
