@@ -29,21 +29,30 @@ export const portfolioData = {
       "order": "0",
       "createdAt": "2026-02-10T12:05:46.503Z"
     },
-    {
-      "id": "fd88c0bd-02a5-40b0-90ef-f6d2c2f319ac",
-      "title": "CVCraft – Full-Stack Resume Builder",
-      "description": "A high-performance resume builder that allows users to create, manage, and export professional resumes as PDFs. Built with a scalable backend and modern UI, optimized for fast PDF generation and real-time updates.",
-      "technologies": [
-        "React  MongoDB  JavaScript  Shadcn/UI  PDF Generation"
-      ],
-      "liveUrl": "https://cv-maker-frontend-wsbs.onrender.com",
-      "githubUrl": "https://cv-maker-frontend-wsbs.onrender.com",
-      "imageUrl": "",
-      "featured": "true",
-      "order": "0",
-      "createdAt": "2026-02-10T11:24:18.730Z"
-    },
-    {
+{
+"id": "fd88c0bd-02a5-40b0-90ef-f6d2c2f319ac",
+"title": "CVCraft – AI-Powered ATS Resume Builder",
+"description": "Developed a full-stack AI-powered resume builder that enables users to create ATS-optimized resumes with real-time editing, AI-assisted content refinement, ATS scoring, and instant PDF export. Features live resume preview, keyword analysis, multiple templates, and a responsive user experience built for students and job seekers.",
+"technologies": [
+"React",
+"FastAPI",
+"MongoDB",
+"Python",
+"Tailwind CSS",
+"Shadcn/UI",
+"NVIDIA NIM",
+"REST APIs",
+"ATS Scoring",
+"PDF Generation"
+],
+"liveUrl": "https://cvcraft-2fz1.onrender.com",
+"githubUrl": "https://github.com/KartikSharma4448/CVCraft",
+"imageUrl": "",
+"featured": true,
+"order": 0,
+"createdAt": "2026-05-31T00:00:00.000Z"
+},
+  {
       "id": "b324c8eb-7f7f-437a-97fd-6d857c6af7af",
       "title": "Biometric Muzzle Identification System",
       "description": "A biometric identification system that recognizes cattle using unique muzzle patterns. Implements image preprocessing, feature extraction, and matching to accurately identify animals for registration and tracking.",
