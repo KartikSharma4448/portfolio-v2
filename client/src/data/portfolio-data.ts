@@ -187,56 +187,156 @@ export const portfolioData = {
   "certificates": [
     {
       "id": "cert-01",
-      "title": "Full Stack Developer Course",
+      "title": "Introduction to MERN Stack",
       "issuer": "Simplilearn",
-      "issueDate": "2025-06-01",
-      "credentialId": null,
+      "issueDate": "2026-06-01",
+      "credentialId": "10347472",
       "credentialUrl": null,
-      "skills": ["Full Stack Development", "Web Applications", "MERN Stack"],
-      "createdAt": "2025-06-01T00:00:00.000Z"
+      "skills": ["MERN Stack"],
+      "createdAt": "2026-06-01T00:00:00.000Z"
     },
     {
       "id": "cert-02",
-      "title": "Introduction to MERN Stack",
+      "title": "Full Stack Developer Course",
       "issuer": "Simplilearn",
-      "issueDate": "2025-05-01",
-      "credentialId": null,
+      "issueDate": "2026-06-01",
+      "credentialId": "10346470",
       "credentialUrl": null,
-      "skills": ["MongoDB", "Express.js", "React.js", "Node.js"],
-      "createdAt": "2025-05-01T00:00:00.000Z"
+      "skills": ["Full-Stack Development"],
+      "createdAt": "2026-06-01T00:00:00.000Z"
     },
     {
       "id": "cert-03",
-      "title": "Git Training",
-      "issuer": "Simplilearn",
-      "issueDate": "2025-04-01",
-      "credentialId": null,
+      "title": "Scientific Computing with Python",
+      "issuer": "freeCodeCamp",
+      "issueDate": "2026-06-01",
+      "credentialId": "kartiksharma06-scwp",
       "credentialUrl": null,
-      "skills": ["Git", "Version Control", "GitHub Workflow"],
-      "createdAt": "2025-04-01T00:00:00.000Z"
+      "skills": ["Python", "Full-Stack Development"],
+      "createdAt": "2026-06-01T00:00:00.000Z"
     },
     {
       "id": "cert-04",
-      "title": "Google Play Store Listing Certificate",
-      "issuer": "Google Play Academy",
-      "issueDate": "2025-08-01",
-      "credentialId": null,
+      "title": "Legacy JavaScript Algorithms and Data Structures V8",
+      "issuer": "freeCodeCamp",
+      "issueDate": "2026-06-01",
+      "credentialId": "kartiksharma06-jaads",
       "credentialUrl": null,
-      "skills": ["App Publishing", "Store Optimization"],
-      "createdAt": "2025-08-01T00:00:00.000Z"
+      "skills": ["Full-Stack Development", "System Architecture", "JavaScript"],
+      "createdAt": "2026-06-01T00:00:00.000Z"
     },
     {
       "id": "cert-05",
-      "title": "Introduction to Generative AI",
-      "issuer": "Google",
-      "issueDate": "2025-07-01",
-      "credentialId": null,
+      "title": "Legacy Responsive Web Design V8",
+      "issuer": "freeCodeCamp",
+      "issueDate": "2026-06-01",
+      "credentialId": "kartiksharma06-rwd",
       "credentialUrl": null,
-      "skills": ["Generative AI", "LLMs", "Prompt Engineering"],
-      "createdAt": "2025-07-01T00:00:00.000Z"
+      "skills": ["Full-Stack Development", "Web Development"],
+      "createdAt": "2026-06-01T00:00:00.000Z"
     },
     {
       "id": "cert-06",
+      "title": "Git Training",
+      "issuer": "Simplilearn",
+      "issueDate": "2026-06-01",
+      "credentialId": "10344065",
+      "credentialUrl": null,
+      "skills": ["Server-Side Rendering", "GitHub", "Git"],
+      "createdAt": "2026-06-01T00:00:00.000Z"
+    },
+    {
+      "id": "cert-07",
+      "title": "Deloitte Australia - Data Analytics Job Simulation",
+      "issuer": "Forage",
+      "issueDate": "2026-06-01",
+      "credentialId": "nosn94mJRSRzDCzvJ",
+      "credentialUrl": null,
+      "skills": ["Data Analysis", "Microsoft Office"],
+      "createdAt": "2026-06-01T00:00:00.000Z"
+    },
+    {
+      "id": "cert-08",
+      "title": "Google Play Academy - Store Listing Certificate",
+      "issuer": "Google Play",
+      "issueDate": "2025-11-01",
+      "credentialId": "170017325",
+      "credentialUrl": null,
+      "skills": ["App Publishing", "Store Optimization"],
+      "createdAt": "2025-11-01T00:00:00.000Z"
+    },
+    {
+      "id": "cert-09",
+      "title": "Introduction to Generative AI",
+      "issuer": "Google",
+      "issueDate": "2025-08-01",
+      "credentialId": "17290804",
+      "credentialUrl": null,
+      "skills": ["Artificial Intelligence", "Generative AI"],
+      "createdAt": "2025-08-01T00:00:00.000Z"
+    },
+    {
+      "id": "cert-10",
+      "title": "Boosting Your Time Management with AI Tools",
+      "issuer": "LinkedIn",
+      "issueDate": "2025-11-01",
+      "credentialId": null,
+      "credentialUrl": null,
+      "skills": ["Time Management", "AI Tools"],
+      "createdAt": "2025-11-01T00:00:00.000Z"
+    },
+    {
+      "id": "cert-11",
+      "title": "Flutter",
+      "issuer": "Cisco thingQbator_VIT",
+      "issueDate": "2025-11-01",
+      "credentialId": null,
+      "credentialUrl": null,
+      "skills": ["Flutter", "Dart"],
+      "createdAt": "2025-11-01T00:00:00.000Z"
+    },
+    {
+      "id": "cert-12",
+      "title": "Full Stack Development with MEAN",
+      "issuer": "Cisco thingQbator_VIT",
+      "issueDate": "2025-11-01",
+      "credentialId": null,
+      "credentialUrl": null,
+      "skills": ["Full-Stack Development", "PostgreSQL", "MEAN Stack"],
+      "createdAt": "2025-11-01T00:00:00.000Z"
+    },
+    {
+      "id": "cert-13",
+      "title": "Quality Management Foundations",
+      "issuer": "LinkedIn",
+      "issueDate": "2025-10-01",
+      "credentialId": null,
+      "credentialUrl": null,
+      "skills": ["Quality Management"],
+      "createdAt": "2025-10-01T00:00:00.000Z"
+    },
+    {
+      "id": "cert-14",
+      "title": "Systems Thinking",
+      "issuer": "LinkedIn",
+      "issueDate": "2025-10-01",
+      "credentialId": null,
+      "credentialUrl": null,
+      "skills": ["Systems Thinking"],
+      "createdAt": "2025-10-01T00:00:00.000Z"
+    },
+    {
+      "id": "cert-15",
+      "title": "Innovating with the Business Model Canvas",
+      "issuer": "University of Virginia",
+      "issueDate": "2025-02-01",
+      "credentialId": "6R2BRKVM442B",
+      "credentialUrl": null,
+      "skills": ["Business Innovation"],
+      "createdAt": "2025-02-01T00:00:00.000Z"
+    },
+    {
+      "id": "cert-16",
       "title": "Foundations: Data, Data, Everywhere",
       "issuer": "Google",
       "issueDate": "2025-04-01",
@@ -246,13 +346,23 @@ export const portfolioData = {
       "createdAt": "2025-04-01T00:00:00.000Z"
     },
     {
-      "id": "cert-07",
-      "title": "Flutter Development",
-      "issuer": "Cisco thingQbator, VIT",
+      "id": "cert-17",
+      "title": "Cloud Systems Software",
+      "issuer": "Georgia Institute of Technology",
       "issueDate": "2025-09-01",
-      "credentialId": null,
+      "credentialId": "S1OWSCV00V0P",
       "credentialUrl": null,
-      "skills": ["Flutter", "Dart", "Cross-Platform Development"],
+      "skills": ["Cloud Computing"],
+      "createdAt": "2025-09-01T00:00:00.000Z"
+    },
+    {
+      "id": "cert-18",
+      "title": "Network Function Virtualization",
+      "issuer": "Georgia Institute of Technology",
+      "issueDate": "2025-09-01",
+      "credentialId": "QJODR3CNF2U1",
+      "credentialUrl": null,
+      "skills": ["Networking", "Virtualization"],
       "createdAt": "2025-09-01T00:00:00.000Z"
     }
   ],
