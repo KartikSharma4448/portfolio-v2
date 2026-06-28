@@ -285,8 +285,7 @@ export const portfolioData = {
     { "id": "sk-26", "name": "Socket.IO", "category": "tools", "level": "intermediate", "createdAt": "2026-06-01T00:00:00.000Z" },
     { "id": "sk-27", "name": "JWT Authentication", "category": "tools", "level": "advanced", "createdAt": "2026-06-01T00:00:00.000Z" },
     { "id": "sk-28", "name": "Deployment Pipelines", "category": "tools", "level": "intermediate", "createdAt": "2026-06-01T00:00:00.000Z" },
-    { "id": "sk-29", "name": "TensorFlow", "category": "technical", "level": "intermediate", "createdAt": "2026-06-01T00:00:00.000Z" },
-    { "id": "sk-30", "name": "Computer Vision", "category": "technical", "level": "intermediate", "createdAt": "2026-06-01T00:00:00.000Z" },
+
     { "id": "sk-31", "name": "Problem Solving", "category": "soft", "level": "advanced", "createdAt": "2026-06-01T00:00:00.000Z" },
     { "id": "sk-32", "name": "Team Collaboration", "category": "soft", "level": "advanced", "createdAt": "2026-06-01T00:00:00.000Z" },
     { "id": "sk-33", "name": "Full Stack Architecture", "category": "technical", "level": "advanced", "createdAt": "2026-06-01T00:00:00.000Z" },

@@ -7,8 +7,8 @@ import {
 } from "lucide-react";
 import {
   SiReact, SiTypescript, SiPython, SiNodedotjs, SiGit,
-  SiMysql, SiFigma, SiTensorflow,
-  SiGithub, SiLinkedin, SiOpenjdk, SiC, SiGooglecloud,
+  SiMysql, SiFigma, SiFlutter, SiNextdotjs,
+  SiGithub, SiLinkedin, SiGooglecloud,
 } from "react-icons/si";
 import { TbBrandAzure } from "react-icons/tb";
 import { motion, useMotionValue, useSpring, useTransform, useInView } from "framer-motion";
@@ -117,11 +117,10 @@ const skillMarqueeItems = [
   { label: "React",           Icon: SiReact,         color: "#61DAFB" },
   { label: "TypeScript",      Icon: SiTypescript,    color: "#3178C6" },
   { label: "Python",          Icon: SiPython,        color: "#3776AB" },
-  { label: "Java",            Icon: SiOpenjdk,       color: "#ED8B00" },
+  { label: "Next.js",         Icon: SiNextdotjs,     color: "#FFFFFF" },
+  { label: "Flutter",         Icon: SiFlutter,       color: "#02569B" },
   { label: "Google Cloud",    Icon: SiGooglecloud,   color: "#4285F4" },
-  { label: "TensorFlow / AI", Icon: SiTensorflow,    color: "#FF6F00" },
   { label: "Node.js",         Icon: SiNodedotjs,     color: "#339933" },
-  { label: "C Programming",   Icon: SiC,             color: "#A8B9CC" },
   { label: "Figma / Design",  Icon: SiFigma,         color: "#F24E1E" },
   { label: "MySQL",           Icon: SiMysql,         color: "#4479A1" },
   { label: "Microsoft Azure", Icon: TbBrandAzure,    color: "#0089D6" },
