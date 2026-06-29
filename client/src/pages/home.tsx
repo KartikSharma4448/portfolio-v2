@@ -152,42 +152,42 @@ export default function Home() {
       />
 
       {/* ─── HERO (template style) ──────────────────────────────────── */}
-      <section className="relative min-h-[100svh] grid grid-cols-1 lg:grid-cols-[1fr_380px_1.2fr] overflow-hidden bg-[#060b18]">
+      <section className="relative min-h-[100svh] flex flex-col lg:grid lg:grid-cols-[1fr_380px_1.2fr] overflow-hidden bg-[#060b18]">
         <HeroCanvasReveal />
         {/* Vignette overlay */}
         <div className="absolute inset-0 z-[2] pointer-events-none" style={{ background: "radial-gradient(circle at center, transparent 30%, rgba(6,6,10,0.85) 90%), linear-gradient(to right, rgba(6,6,10,0.9) 0%, transparent 20%, transparent 80%, rgba(6,6,10,0.9) 100%)" }} />
         {/* Glow */}
         <div className="absolute inset-0 z-[3] pointer-events-none" style={{ background: "radial-gradient(ellipse 55% 60% at 50% 46%, rgba(100,180,255,0.08) 0%, transparent 70%)" }} />
 
-        {/* ═══ LEFT COLUMN ═══ */}
-        <div className="flex flex-col justify-center px-8 sm:px-12 lg:px-16 pt-28 lg:pt-0 relative z-10">
+        {/* ═══ LEFT COLUMN (visible on all screens) ═══ */}
+        <div className="flex flex-col justify-center items-center text-center lg:items-start lg:text-left px-6 sm:px-10 lg:px-16 pt-32 pb-16 lg:pt-0 lg:pb-0 relative z-10">
           {/* eyebrow */}
-          <p className="font-['Cinzel',serif] text-[8.5px] tracking-[0.45em] text-cyan-400 mb-7 flex items-center gap-3 uppercase" style={{ textShadow: "0 2px 4px rgba(0,0,0,0.9)" }}>
+          <p className="font-['Cinzel',serif] text-[8.5px] tracking-[0.45em] text-cyan-400 mb-5 lg:mb-7 flex items-center gap-3 uppercase" style={{ textShadow: "0 2px 4px rgba(0,0,0,0.9)" }}>
             <span className="block w-7 h-px bg-cyan-400 opacity-80" />
             OPEN TO WORK · ACTIVE
           </p>
 
           {/* headline */}
-          <h1 className="font-['Cinzel',serif] text-[38px] sm:text-[46px] font-black leading-[1.06] tracking-wide text-white mb-2" style={{ textShadow: "0 4px 15px rgba(0,0,0,0.9)" }}>
+          <h1 className="font-['Cinzel',serif] text-[42px] sm:text-[46px] lg:text-[38px] xl:text-[46px] font-black leading-[1.06] tracking-wide text-white mb-2" style={{ textShadow: "0 4px 15px rgba(0,0,0,0.9)" }}>
             KARTIK<br />
             <em className="not-italic text-cyan-400 block">SHARMA</em>
           </h1>
 
           {/* subtitle */}
-          <p className="font-['Cinzel',serif] text-[9.5px] tracking-[0.28em] text-amber-300/90 mb-8 uppercase" style={{ textShadow: "0 2px 5px rgba(0,0,0,0.9)" }}>
+          <p className="font-['Cinzel',serif] text-[9.5px] tracking-[0.28em] text-amber-300/90 mb-6 lg:mb-8 uppercase" style={{ textShadow: "0 2px 5px rgba(0,0,0,0.9)" }}>
             FULL STACK & MERN DEVELOPER
           </p>
 
           {/* body */}
-          <p className="font-['Cormorant_Garamond',serif] text-[16px] font-light leading-[1.85] text-white/85 max-w-[330px] mb-5" style={{ textShadow: "0 2px 6px rgba(0,0,0,0.9)" }}>
+          <p className="font-['Cormorant_Garamond',serif] text-[15px] sm:text-[16px] font-light leading-[1.85] text-white/85 max-w-[330px] mb-5" style={{ textShadow: "0 2px 6px rgba(0,0,0,0.9)" }}>
             He is <strong className="text-cyan-400 font-normal">not just a coder</strong>. He is something more — a silent architect, a fearless innovator. Building scalable platforms & AI-driven systems from scratch.
           </p>
 
           {/* divider */}
-          <div className="w-11 h-px bg-gradient-to-r from-cyan-400 to-transparent my-6" />
+          <div className="w-11 h-px bg-gradient-to-r from-cyan-400 to-transparent my-4 lg:my-6" />
 
           {/* quote */}
-          <blockquote className="italic font-['Cormorant_Garamond',serif] text-[17px] font-light leading-[1.72] text-white/90 mb-11 pl-5 border-l-2 border-cyan-900 max-w-[310px]" style={{ textShadow: "0 2px 5px rgba(0,0,0,0.9)" }}>
+          <blockquote className="italic font-['Cormorant_Garamond',serif] text-[17px] font-light leading-[1.72] text-white/90 mb-8 lg:mb-11 pl-5 border-l-2 border-cyan-900 max-w-[310px] text-left" style={{ textShadow: "0 2px 5px rgba(0,0,0,0.9)" }}>
             "I build what others imagine."
           </blockquote>
 
@@ -197,6 +197,24 @@ export default function Home() {
               VIEW MY WORK <span className="text-[13px]">→</span>
             </span>
           </Link>
+
+          {/* mobile stats row */}
+          <div className="flex items-center gap-8 mt-10 lg:hidden">
+            <div className="text-center">
+              <div className="font-['Cinzel',serif] text-[28px] font-black text-cyan-400 leading-none">15+</div>
+              <div className="font-['Cinzel',serif] text-[7px] tracking-[0.3em] text-white/60 mt-1 uppercase">Projects</div>
+            </div>
+            <div className="w-px h-10 bg-white/10" />
+            <div className="text-center">
+              <div className="font-['Cinzel',serif] text-[28px] font-black text-cyan-400 leading-none">4+</div>
+              <div className="font-['Cinzel',serif] text-[7px] tracking-[0.3em] text-white/60 mt-1 uppercase">Paid Roles</div>
+            </div>
+            <div className="w-px h-10 bg-white/10" />
+            <div className="text-center">
+              <div className="font-['Cinzel',serif] text-[28px] font-black text-cyan-400 leading-none">18+</div>
+              <div className="font-['Cinzel',serif] text-[7px] tracking-[0.3em] text-white/60 mt-1 uppercase">Certs</div>
+            </div>
+          </div>
         </div>
 
         {/* ═══ CENTER HINT (absolute positioned) ═══ */}
@@ -210,8 +228,8 @@ export default function Home() {
         <div className="hidden lg:block relative z-10 pointer-events-none">
         </div>
 
-        {/* ═══ RIGHT COLUMN ═══ */}
-        <div className="flex flex-col justify-center items-end text-right pr-10 sm:pr-14 lg:pr-20 pb-28 lg:pb-0 relative z-10">
+        {/* ═══ RIGHT COLUMN (hidden on mobile) ═══ */}
+        <div className="hidden lg:flex flex-col justify-center items-end text-right pr-10 sm:pr-14 lg:pr-20 pb-28 lg:pb-0 relative z-10">
           {/* stat number */}
           <div className="font-['Cinzel',serif] text-[52px] font-black text-cyan-400 leading-none tracking-tight" style={{ textShadow: "0 4px 15px rgba(0,0,0,0.9)" }}>
             15+
@@ -250,9 +268,9 @@ export default function Home() {
         </div>
 
         {/* scroll indicator */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10 opacity-70">
+        <div className="absolute bottom-4 lg:bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10 opacity-70">
           <span className="font-['Cinzel',serif] text-[7px] tracking-[0.42em] text-white uppercase">SCROLL</span>
-          <div className="w-px h-9 bg-gradient-to-b from-cyan-400 to-transparent animate-pulse" />
+          <div className="w-px h-7 lg:h-9 bg-gradient-to-b from-cyan-400 to-transparent animate-pulse" />
         </div>
       </section>
 
