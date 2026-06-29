@@ -22,8 +22,8 @@ export function Footer() {
               Kartik<span className="text-primary">.</span>
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Software Developer | Freelancer | Passionate About
-              Coding & Problem-Solving
+              Full Stack & MERN Stack Developer | Building Scalable
+              Web Apps, Mobile Apps & AI-Driven Systems
             </p>
           </div>
 

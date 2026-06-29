@@ -160,7 +160,7 @@ export const personSchema = {
   sameAs: [
     "https://linkedin.com/in/kartik-sharma06",
     "https://github.com/kartiksharma4448",
-    "https://instagram.com/kartik.verse6",
+    "https://www.instagram.com/itszeromind",
     "https://codeuppath.com",
   ],
 };

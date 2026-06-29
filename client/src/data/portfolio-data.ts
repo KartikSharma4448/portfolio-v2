@@ -460,9 +460,9 @@ export const portfolioData = {
     {
       "id": "637fd1cd-2181-4a92-8abb-0d04f0f1e9cc",
       "platform": "Instagram",
-      "url": "https://instagram.com/kartik.verse6",
+      "url": "https://www.instagram.com/itszeromind",
       "icon": "Instagram",
-      "handle": "@kartik.verse6",
+      "handle": "@itszeromind",
       "order": "2",
       "createdAt": "2026-02-10T12:50:35.253Z"
     },
@@ -563,6 +563,20 @@ export const portfolioData = {
     }
   ],
   "blogPosts": [
+    {
+      "id": "blog-vgu-ai-campus-review",
+      "title": "Marketing Excellence vs Student Reality: A Critical Review of VGU's Google AI Campus Initiative",
+      "slug": "vgu-google-ai-campus-critical-review",
+      "excerpt": "A current student's honest analysis comparing VGU's Google AI Campus promotional claims with the actual student experience — examining digital infrastructure, ERP reliability, and the gap between marketing and reality.",
+      "content": "# Marketing Excellence vs Student Reality: A Critical Review of VGU's Google AI Campus Initiative\n\n## By a Current Student (Kartik Sharma)\n\n## Introduction\n\nHigher education institutions play a significant role in shaping students' careers and futures. With increasing competition among universities, marketing has become a powerful tool for attracting admissions. While promoting innovation and new initiatives is expected, those claims must accurately reflect the experience students receive.\n\nRecently, Vivekananda Global University (VGU) launched its Google AI Campus initiative, presenting itself as Rajasthan's first Agentic AI campus in collaboration with Google Cloud.\n\n## The Promise\n\nThe official Google AI Campus webpage highlights several ambitious claims: Rajasthan's First Agentic AI Campus, Industry-designed curriculum, Google Cloud integrated education, Hands-on cloud laboratories, AI-powered learning environment, Multiple Google certification pathways, Career-ready graduates.\n\n## The Reality Experienced by Students\n\nBased on my experience, there is a noticeable gap between the promotional image and everyday academic reality. Students frequently experience problems with ERP portal stability, slow response times, server-side failures, login issues, session timeouts, and inconsistent performance during important academic activities.\n\n## Conclusion\n\nArtificial Intelligence has the potential to transform education. However, technology should enhance classrooms, laboratories, research opportunities, digital infrastructure, and student outcomes — not only university marketing. Credibility is built when institutional claims consistently match the student experience.",
+      "tags": ["vgu", "google-ai-campus", "student-review", "education", "critical-analysis", "rajasthan"],
+      "coverImage": "/image.png",
+      "published": "true",
+      "publishedAt": "2026-06-17T00:00:00.000Z",
+      "createdAt": "2026-06-17T00:00:00.000Z",
+      "updatedAt": "2026-06-17T00:00:00.000Z",
+      "externalUrl": "https://medium.com/@kartikuma9261/marketing-excellence-vs-student-reality-a-critical-review-of-vgus-google-ai-campus-initiative-aafb7abb33a4"
+    },
     {
       "id": "5d4ae291-6e84-4446-bec5-37c631b9e2f9",
       "title": "AceHack 5.0 Hackathon Journey — Day 1",

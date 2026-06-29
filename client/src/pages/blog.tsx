@@ -93,7 +93,7 @@ export default function Blog() {
                 {/* hover glow */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-violet-500/20 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 -z-10" />
 
-                <Link href={`/blog/${post.slug}`}>
+                <a href={(post as any).externalUrl || `/blog/${post.slug}`} target={(post as any).externalUrl ? "_blank" : "_self"} rel={(post as any).externalUrl ? "noopener noreferrer" : undefined}>
                   <div className="relative h-full rounded-2xl border border-border/50 bg-card/80 backdrop-blur-sm overflow-hidden shadow-lg group-hover:border-primary/30 group-hover:shadow-xl group-hover:shadow-primary/10 transition-all duration-300 cursor-pointer">
 
                     {/* top accent */}
@@ -158,7 +158,7 @@ export default function Blog() {
                       </div>
                     </div>
                   </div>
-                </Link>
+                </a>
               </motion.div>
             ))}
           </div>

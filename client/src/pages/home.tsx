@@ -15,7 +15,7 @@ import { motion, useMotionValue, useSpring, useTransform, useInView } from "fram
 import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { AnimatedBackground } from "@/components/3d-background";
+import { HeroCanvasReveal } from "@/components/hero-canvas-reveal";
 import { SEO } from "@/components/seo";
 import { pageKeywords, personSchema } from "@/lib/seo-keywords";
 import { Magnetic, SpotlightCard } from "@/components/motion-primitives";
@@ -134,10 +134,10 @@ export default function Home() {
   const featuredProjects = projects.filter((p) => p.featured === "true").slice(0, 3);
 
   const stats = [
-    { label: "Years of Study", numericValue: 2, suffix: "+", icon: Calendar, color: "text-blue-400", bg: "from-blue-500/20 to-blue-600/5", border: "border-blue-500/20", glow: "shadow-blue-500/10" },
+    { label: "Years Experience", numericValue: 2, suffix: "+", icon: Calendar, color: "text-blue-400", bg: "from-blue-500/20 to-blue-600/5", border: "border-blue-500/20", glow: "shadow-blue-500/10" },
     { label: "Certifications", numericValue: certificates.length || 10, suffix: "+", icon: Award, color: "text-amber-400", bg: "from-amber-500/20 to-amber-600/5", border: "border-amber-500/20", glow: "shadow-amber-500/10" },
-    { label: "Projects Built", numericValue: projects.length || 5, suffix: "+", icon: FolderOpen, color: "text-emerald-400", bg: "from-emerald-500/20 to-emerald-600/5", border: "border-emerald-500/20", glow: "shadow-emerald-500/10" },
-    { label: "CGPA Score", numericValue: 9, suffix: ".43", icon: Star, color: "text-violet-400", bg: "from-violet-500/20 to-violet-600/5", border: "border-violet-500/20", glow: "shadow-violet-500/10" },
+    { label: "Paid Roles", numericValue: 4, suffix: "+", icon: Zap, color: "text-emerald-400", bg: "from-emerald-500/20 to-emerald-600/5", border: "border-emerald-500/20", glow: "shadow-emerald-500/10" },
+    { label: "Tech Stack Tools", numericValue: 20, suffix: "+", icon: Layers, color: "text-violet-400", bg: "from-violet-500/20 to-violet-600/5", border: "border-violet-500/20", glow: "shadow-violet-500/10" },
   ];
 
   return (
@@ -151,181 +151,109 @@ export default function Home() {
         schema={personSchema}
       />
 
-      {/* ─── HERO (redesigned) ──────────────────────────────────── */}
-      <section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden noise-overlay bg-[#060b18]">
-        <AnimatedBackground />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#060b18] pointer-events-none" />
+      {/* ─── HERO (template style) ──────────────────────────────────── */}
+      <section className="relative min-h-[100svh] grid grid-cols-1 lg:grid-cols-[1fr_380px_1.2fr] overflow-hidden bg-[#060b18]">
+        <HeroCanvasReveal />
+        {/* Vignette overlay */}
+        <div className="absolute inset-0 z-[2] pointer-events-none" style={{ background: "radial-gradient(circle at center, transparent 30%, rgba(6,6,10,0.85) 90%), linear-gradient(to right, rgba(6,6,10,0.9) 0%, transparent 20%, transparent 80%, rgba(6,6,10,0.9) 100%)" }} />
+        {/* Glow */}
+        <div className="absolute inset-0 z-[3] pointer-events-none" style={{ background: "radial-gradient(ellipse 55% 60% at 50% 46%, rgba(100,180,255,0.08) 0%, transparent 70%)" }} />
 
-        {/* big ambient wordmark behind everything */}
-        <div aria-hidden className="pointer-events-none absolute inset-0 flex items-center justify-center z-[1] select-none">
-          <span className="font-display font-bold text-[26vw] leading-none text-white/[0.025] whitespace-nowrap tracking-tighter">
-            DEVELOPER
-          </span>
+        {/* ═══ LEFT COLUMN ═══ */}
+        <div className="flex flex-col justify-center px-8 sm:px-12 lg:px-16 pt-28 lg:pt-0 relative z-10">
+          {/* eyebrow */}
+          <p className="font-['Cinzel',serif] text-[8.5px] tracking-[0.45em] text-cyan-400 mb-7 flex items-center gap-3 uppercase" style={{ textShadow: "0 2px 4px rgba(0,0,0,0.9)" }}>
+            <span className="block w-7 h-px bg-cyan-400 opacity-80" />
+            OPEN TO WORK · ACTIVE
+          </p>
+
+          {/* headline */}
+          <h1 className="font-['Cinzel',serif] text-[38px] sm:text-[46px] font-black leading-[1.06] tracking-wide text-white mb-2" style={{ textShadow: "0 4px 15px rgba(0,0,0,0.9)" }}>
+            KARTIK<br />
+            <em className="not-italic text-cyan-400 block">SHARMA</em>
+          </h1>
+
+          {/* subtitle */}
+          <p className="font-['Cinzel',serif] text-[9.5px] tracking-[0.28em] text-amber-300/90 mb-8 uppercase" style={{ textShadow: "0 2px 5px rgba(0,0,0,0.9)" }}>
+            FULL STACK & MERN DEVELOPER
+          </p>
+
+          {/* body */}
+          <p className="font-['Cormorant_Garamond',serif] text-[16px] font-light leading-[1.85] text-white/85 max-w-[330px] mb-5" style={{ textShadow: "0 2px 6px rgba(0,0,0,0.9)" }}>
+            He is <strong className="text-cyan-400 font-normal">not just a coder</strong>. He is something more — a silent architect, a fearless innovator. Building scalable platforms & AI-driven systems from scratch.
+          </p>
+
+          {/* divider */}
+          <div className="w-11 h-px bg-gradient-to-r from-cyan-400 to-transparent my-6" />
+
+          {/* quote */}
+          <blockquote className="italic font-['Cormorant_Garamond',serif] text-[17px] font-light leading-[1.72] text-white/90 mb-11 pl-5 border-l-2 border-cyan-900 max-w-[310px]" style={{ textShadow: "0 2px 5px rgba(0,0,0,0.9)" }}>
+            "I build what others imagine."
+          </blockquote>
+
+          {/* button */}
+          <Link href="/projects">
+            <span className="inline-flex items-center gap-3.5 font-['Cinzel',serif] text-[9.5px] font-bold tracking-[0.4em] text-white bg-white/5 border border-cyan-500/50 px-7 py-4 cursor-pointer backdrop-blur-sm hover:border-cyan-400 hover:text-cyan-400 hover:shadow-[0_0_15px_rgba(100,180,255,0.3)] transition-all duration-300 uppercase">
+              VIEW MY WORK <span className="text-[13px]">→</span>
+            </span>
+          </Link>
         </div>
 
-        <div className="container mx-auto px-6 sm:px-8 lg:px-14 relative z-10 pt-24 pb-16">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center max-w-7xl mx-auto">
+        {/* ═══ CENTER HINT (absolute positioned) ═══ */}
+        <div className="hidden lg:flex absolute bottom-24 left-1/2 -translate-x-1/2 z-10 pointer-events-none">
+          <p className="font-['Cinzel',serif] text-[8px] tracking-[0.35em] text-white/60 animate-pulse uppercase" style={{ textShadow: "0 2px 4px rgba(0,0,0,0.9)" }}>
+            MOVE CURSOR — REVEAL THE VISION
+          </p>
+        </div>
 
+        {/* ═══ CENTER COLUMN ═══ */}
+        <div className="hidden lg:block relative z-10 pointer-events-none">
+        </div>
 
-            {/* ══ LEFT — editorial headline ══════════════════════ */}
-            <div className="lg:col-span-7 order-2 lg:order-1">
-
-              {/* status row */}
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className="flex items-center gap-3 mb-7"
-              >
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-medium font-mono">
-                  <span className="relative flex h-1.5 w-1.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400" />
-                  </span>
-                  available_for_work
-                </span>
-                <span className="hidden sm:inline-block h-px w-12 bg-white/15" />
-                <span className="hidden sm:inline text-xs font-mono text-white/40">// Jaipur, IN</span>
-              </motion.div>
-
-              {/* huge name */}
-              <motion.h1
-                initial={{ opacity: 0, y: 18 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.04, ease: [0.16, 1, 0.3, 1] }}
-                className="font-display font-bold tracking-tighter leading-[0.86] text-6xl sm:text-7xl lg:text-8xl xl:text-9xl"
-              >
-                <span className="block text-white">Kartik</span>
-                <span className="block text-gradient-animate">Sharma</span>
-              </motion.h1>
-
-              {/* role line */}
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.14 }}
-                className="mt-6 flex items-center gap-3 text-lg sm:text-xl font-medium"
-              >
-                <span className="text-white/30 font-mono text-base">$</span>
-                <TypewriterRole />
-              </motion.div>
-
-              {/* description */}
-              <motion.p
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.2 }}
-                className="mt-6 text-base sm:text-lg text-slate-400 max-w-xl leading-relaxed"
-              >
-                BCA student from Jaipur crafting full-stack web apps, AI tools &amp; clean
-                digital experiences. Turning complex problems into elegant solutions.
-              </motion.p>
-
-              {/* CTAs */}
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.26 }}
-                className="mt-9 flex flex-wrap items-center gap-4"
-              >
-                <Magnetic strength={0.4}>
-                  <Link href="/projects">
-                    <Button
-                      size="lg"
-                      className="shine group bg-white text-black hover:bg-white/90 font-semibold px-7 h-12 rounded-full border-0 transition-all duration-300"
-                    >
-                      <FolderOpen className="h-4 w-4 mr-2" />
-                      View My Work
-                      <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </Link>
-                </Magnetic>
-                <Magnetic strength={0.4}>
-                  <Link href="/contact">
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className="border-white/20 bg-transparent text-white hover:bg-white/5 hover:border-white/40 font-semibold px-7 h-12 rounded-full transition-all duration-300"
-                    >
-                      <Mail className="h-4 w-4 mr-2" />
-                      Hire Me
-                    </Button>
-                  </Link>
-                </Magnetic>
-
-                {/* socials */}
-                <div className="flex items-center gap-2 ml-1">
-                  {[
-                    { href: "https://linkedin.com/in/kartik-sharma06", icon: SiLinkedin, label: "LinkedIn" },
-                    { href: "https://github.com/kartiksharma4448", icon: SiGithub, label: "GitHub" },
-                  ].map(({ href, icon: Icon, label }) => (
-                    <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
-                      <motion.div whileHover={{ y: -3 }} className="w-11 h-11 rounded-full border border-white/12 bg-white/[0.03] text-white/55 flex items-center justify-center hover:text-white hover:border-white/30 transition-colors">
-                        <Icon className="h-4 w-4" />
-                      </motion.div>
-                    </a>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
-
-            {/* ══ RIGHT — terminal card + photo ══════════════════ */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96, y: 14 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-5 order-1 lg:order-2 flex justify-center lg:justify-end"
-            >
-              <TiltCard className="w-full max-w-sm">
-                <div className="conic-border relative rounded-2xl overflow-hidden border border-white/10 bg-[#0a0e17]/90 backdrop-blur-xl shadow-2xl shadow-black/60">
-                  {/* terminal title bar */}
-                  <div className="flex items-center gap-2 px-4 py-3 border-b border-white/8 bg-white/[0.02]">
-                    <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
-                    <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
-                    <span className="w-3 h-3 rounded-full bg-[#28c840]" />
-                    <span className="ml-2 text-[11px] font-mono text-white/35">kartik@portfolio ~ %</span>
-                  </div>
-
-                  {/* photo */}
-                  <div className="relative">
-                    <img
-                      src="/profile.png"
-                      alt="Kartik Sharma"
-                      className="w-full aspect-square object-cover"
-                      loading="eager"
-                      onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/favicon.png"; }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e17] via-transparent to-transparent" />
-                  </div>
-
-                  {/* terminal body */}
-                  <div className="px-4 py-4 font-mono text-[12px] leading-relaxed">
-                    <div><span className="text-violet-400">const</span> <span className="text-blue-300">dev</span> <span className="text-white/40">= {"{"}</span></div>
-                    <div className="pl-4"><span className="text-emerald-400">name</span><span className="text-white/40">:</span> <span className="text-amber-300">"Kartik Sharma"</span><span className="text-white/40">,</span></div>
-                    <div className="pl-4"><span className="text-emerald-400">stack</span><span className="text-white/40">:</span> <span className="text-amber-300">["React","Node","Py"]</span><span className="text-white/40">,</span></div>
-                    <div className="pl-4"><span className="text-emerald-400">cgpa</span><span className="text-white/40">:</span> <span className="text-cyan-300">9.43</span><span className="text-white/40">,</span></div>
-                    <div className="pl-4"><span className="text-emerald-400">open</span><span className="text-white/40">:</span> <span className="text-cyan-300">true</span></div>
-                    <div><span className="text-white/40">{"}"}</span><span className="inline-block w-2 h-4 bg-emerald-400 ml-1 align-middle animate-pulse" /></div>
-                  </div>
-                </div>
-              </TiltCard>
-            </motion.div>
-
+        {/* ═══ RIGHT COLUMN ═══ */}
+        <div className="flex flex-col justify-center items-end text-right pr-10 sm:pr-14 lg:pr-20 pb-28 lg:pb-0 relative z-10">
+          {/* stat number */}
+          <div className="font-['Cinzel',serif] text-[52px] font-black text-cyan-400 leading-none tracking-tight" style={{ textShadow: "0 4px 15px rgba(0,0,0,0.9)" }}>
+            15+
           </div>
+          <div className="font-['Cinzel',serif] text-[8px] tracking-[0.42em] text-white/70 mt-1 mb-9 uppercase">
+            SHIPPED PROJECTS
+          </div>
+
+          {/* section */}
+          <p className="font-['Cinzel',serif] text-[8.5px] tracking-[0.42em] text-cyan-400/90 mb-3 uppercase" style={{ textShadow: "0 2px 4px rgba(0,0,0,0.9)" }}>
+            THE STACK
+          </p>
+          <p className="font-['Cormorant_Garamond',serif] text-[16px] font-light leading-[1.85] text-white/85 max-w-[320px] mb-5" style={{ textShadow: "0 2px 6px rgba(0,0,0,0.9)" }}>
+            Beneath the code lives a <strong className="text-cyan-400 font-normal">problem solver</strong>. Every project tells a story. Every challenge shapes the developer.
+          </p>
+
+          {/* divider */}
+          <div className="w-11 h-px bg-gradient-to-l from-cyan-400 to-transparent my-6 ml-auto" />
+
+          {/* legend */}
+          <p className="font-['Cinzel',serif] text-[8.5px] tracking-[0.42em] text-cyan-400/90 mb-3 uppercase" style={{ textShadow: "0 2px 4px rgba(0,0,0,0.9)" }}>
+            THE APPROACH
+          </p>
+          <ul className="flex flex-col gap-3 mb-4 items-end">
+            {["React, Next.js, Flutter — Frontend", "FastAPI, NestJS, Node — Backend", "PostgreSQL, MongoDB, Supabase — Data", "4 paid roles & international clients"].map((item) => (
+              <li key={item} className="flex items-start gap-3 font-['Cormorant_Garamond',serif] text-[14px] font-light text-white/85 leading-[1.62]" style={{ textShadow: "0 2px 5px rgba(0,0,0,0.9)" }}>
+                {item}
+                <span className="block flex-shrink-0 w-[18px] h-px bg-cyan-400/70 mt-[11px]" />
+              </li>
+            ))}
+          </ul>
+
+          <p className="font-['Cinzel',serif] text-[8px] tracking-[0.35em] text-white/60 mt-9 uppercase">
+            EXPLORE THE PROJECTS ABOVE
+          </p>
         </div>
 
         {/* scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.5 }}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-white/25"
-        >
-          <span className="text-[9px] tracking-[0.3em] uppercase font-mono">scroll</span>
-          <motion.div animate={{ y: [0, 6, 0] }} transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}>
-            <ArrowDown className="h-4 w-4" />
-          </motion.div>
-        </motion.div>
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10 opacity-70">
+          <span className="font-['Cinzel',serif] text-[7px] tracking-[0.42em] text-white uppercase">SCROLL</span>
+          <div className="w-px h-9 bg-gradient-to-b from-cyan-400 to-transparent animate-pulse" />
+        </div>
       </section>
 
       {/* ─── BENTO GRID (stats + highlights) ────────────────────── */}
@@ -372,11 +300,7 @@ export default function Home() {
                   </div>
                   <div className="relative">
                     <div className={`font-display text-3xl sm:text-4xl font-bold ${stat.color} tabular-nums leading-none`}>
-                      {stat.suffix === ".43" ? (
-                        <span>9.43</span>
-                      ) : (
-                        <AnimatedCounter target={stat.numericValue} suffix={stat.suffix} />
-                      )}
+                      <AnimatedCounter target={stat.numericValue} suffix={stat.suffix} />
                     </div>
                     <div className="text-xs text-muted-foreground font-medium mt-1.5">{stat.label}</div>
                   </div>

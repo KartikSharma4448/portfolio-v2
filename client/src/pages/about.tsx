@@ -90,9 +90,9 @@ export default function About() {
   const experience = getExperience();
 
   const quickStats = [
-    { label: "CGPA", value: "9.43" },
-    { label: "Projects", value: "5+" },
-    { label: "Roles", value: "3" },
+    { label: "Paid Roles", value: "4+" },
+    { label: "Shipped Projects", value: "15+" },
+    { label: "Certifications", value: "18+" },
   ];
 
   const typeColors: Record<string, string> = {
@@ -105,7 +105,7 @@ export default function About() {
     <div className="min-h-screen pt-28 pb-20">
       <SEO
         title="About — Full Stack Developer from Jaipur"
-        description="Kartik Sharma is a Full Stack Developer and founder of CodeUpPath from Jaipur, India. BCA student building scalable web apps, AI-driven systems and digital products. 9.43 CGPA."
+        description="Kartik Sharma is a Full Stack & MERN Stack Developer from Jaipur, India. Building scalable web apps, cross-platform mobile apps, and AI-driven systems. 4+ paid roles and 15+ shipped projects."
         keywords={pageKeywords.about}
         url="https://kartiksharma.site/about"
         type="profile"

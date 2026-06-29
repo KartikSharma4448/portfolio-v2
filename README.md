@@ -214,7 +214,7 @@ The build output (`dist/public/`) is a static folder. Deploy to any free static 
 | <img src="https://cdn.simpleicons.org/globe/4285F4" width="16"/> Website | [kartiksharma.site](https://kartiksharma.site) |
 | <img src="https://cdn.simpleicons.org/linkedin/0A66C2" width="16"/> LinkedIn | [kartik-sharma06](https://linkedin.com/in/kartik-sharma06) |
 | <img src="https://cdn.simpleicons.org/github/181717" width="16"/> GitHub | [kartiksharma4448](https://github.com/kartiksharma4448) |
-| <img src="https://cdn.simpleicons.org/instagram/E4405F" width="16"/> Instagram | [kartik.verse6](https://instagram.com/kartik.verse6) |
+| <img src="https://cdn.simpleicons.org/instagram/E4405F" width="16"/> Instagram | [itszeromind](https://www.instagram.com/itszeromind) |
 | 🚀 CodeUpPath | [codeuppath.com](https://codeuppath.com) |
 
 </div>
