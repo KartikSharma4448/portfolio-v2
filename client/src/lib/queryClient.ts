@@ -23,7 +23,9 @@ function resolveStatic(path: string): unknown {
   switch (resource) {
     case "projects":
       if (id) return portfolioData.projects.find((p) => p.id === id) ?? null;
-      return portfolioData.projects;
+      return [...portfolioData.projects].sort(
+        (a, b) => parseInt(String(a.order)) - parseInt(String(b.order))
+      );
 
     case "certificates":
       if (id) return portfolioData.certificates.find((c) => c.id === id) ?? null;

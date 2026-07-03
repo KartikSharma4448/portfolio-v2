@@ -19,6 +19,7 @@ import Home from "@/pages/home";
 import About from "@/pages/about";
 import Achievements from "@/pages/achievements";
 import Projects from "@/pages/projects";
+import ProjectDetailPage from "@/pages/project-detail";
 import Services from "@/pages/services";
 import Contact from "@/pages/contact";
 import SocialLinks from "@/pages/social-links";
@@ -74,6 +75,7 @@ function Router() {
       
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPost} />
+      <Route path="/projects/:slug" component={ProjectDetailPage} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/terms-of-service" component={TermsOfService} />
       <Route path="/auth" component={AuthPage} />
@@ -87,7 +89,7 @@ function Router() {
       <ProtectedRoute path="/admin/about" component={AdminAbout} />
       <ProtectedRoute path="/admin/products" component={AdminProducts} />
       
-      {!CurrentPage && location !== "/blog" && !location.startsWith("/blog/") && location !== "/privacy-policy" && location !== "/terms-of-service" && location !== "/auth" && !location.startsWith("/admin") && <NotFound />}
+      {!CurrentPage && location !== "/blog" && !location.startsWith("/blog/") && !location.startsWith("/projects/") && location !== "/privacy-policy" && location !== "/terms-of-service" && location !== "/auth" && !location.startsWith("/admin") && <NotFound />}
     </>
   );
 }

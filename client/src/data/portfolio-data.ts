@@ -12,7 +12,7 @@ export const portfolioData = {
       "githubUrl": "",
       "imageUrl": "",
       "featured": "true",
-      "order": 1,
+      "order": 6,
       "createdAt": "2026-04-01T00:00:00.000Z"
     },
     {
@@ -24,31 +24,31 @@ export const portfolioData = {
       "githubUrl": "https://github.com/KartikSharma4448/Pranag-fluter",
       "imageUrl": "",
       "featured": "true",
-      "order": 2,
+      "order": 7,
       "createdAt": "2026-02-01T00:00:00.000Z"
     },
     {
       "id": "p03-vcc-erp",
       "title": "VCC ERP – Coaching Institute Management",
-      "description": "Production-ready ERP with Flutter mobile app, Next.js admin dashboard, and NestJS REST backend. Features role-based auth (Admin/Teacher/Student), student and batch management, attendance, fee tracking, quizzes, timetable, AI Tutor (NVIDIA NIM Llama 3.1), and performance analytics.",
-      "technologies": ["Flutter", "Next.js", "NestJS", "PostgreSQL", "Supabase", "Prisma", "JWT"],
-      "liveUrl": "",
+      "description": "Production-ready ERP for coaching institutes. Flutter mobile app for students (attendance, fees, quizzes, AI tutor, timetable) & teachers (class management, mark attendance). Next.js admin dashboard with full CRUD, analytics, CSV export, and role-based access. NestJS REST API with JWT auth and Prisma ORM on Supabase.",
+      "technologies": ["Flutter", "Dart", "Next.js", "NestJS", "PostgreSQL", "Supabase", "Prisma", "TypeScript", "NVIDIA NIM", "JWT"],
+      "liveUrl": "https://vcc-admin-panel.vercel.app",
       "githubUrl": "",
       "imageUrl": "",
       "featured": "true",
-      "order": 3,
+      "order": 2,
       "createdAt": "2026-06-01T00:00:00.000Z"
     },
     {
       "id": "p04-rajasthali",
       "title": "Rajasthali – Travel & Fleet Management System",
-      "description": "Full-stack travel management system with real-time GPS vehicle tracking, customer booking and reservations, live trip monitoring with route updates, driver/vehicle dashboard, and admin analytics panel.",
-      "technologies": ["Flutter", "Next.js", "NestJS", "PostgreSQL", "Google Maps API", "Supabase"],
+      "description": "Complete travel management ecosystem. Flutter app for drivers (live GPS tracking, speedometer, road navigation, auto-start tours, SOS alerts) & clients (track tours live). Next.js admin panel for fleet tracking, HR, payroll, attendance & analytics. All at ₹0/month cost using Supabase backend with Realtime updates.",
+      "technologies": ["Flutter", "Dart", "Next.js", "TypeScript", "PostgreSQL", "Supabase", "Riverpod", "Leaflet", "OSRM", "Firebase FCM", "Tailwind CSS"],
       "liveUrl": "",
       "githubUrl": "",
       "imageUrl": "",
       "featured": "true",
-      "order": 4,
+      "order": 3,
       "createdAt": "2026-06-01T00:00:00.000Z"
     },
     {
@@ -72,7 +72,7 @@ export const portfolioData = {
       "githubUrl": "https://github.com/KartikSharma4448/Aegiscare",
       "imageUrl": "",
       "featured": "true",
-      "order": 6,
+      "order": 11,
       "createdAt": "2026-06-01T00:00:00.000Z"
     },
     {
@@ -84,31 +84,31 @@ export const portfolioData = {
       "githubUrl": "https://github.com/KartikSharma4448/KidZ-GPT",
       "imageUrl": "",
       "featured": "true",
-      "order": 7,
+      "order": 10,
       "createdAt": "2026-05-01T00:00:00.000Z"
     },
     {
       "id": "p08-todoup",
       "title": "TodoUp – AI Productivity App",
-      "description": "Published task management app on Google Play Store with AI-assisted task features, smart reminders, real-time Supabase sync, and offline Hive storage for seamless internet-free experience.",
+      "description": "Published on Google Play Store. Modern task management app with AI-assisted task features, smart reminders, real-time Supabase cloud sync, and offline Hive storage for seamless internet-free experience.",
       "technologies": ["Flutter", "Dart", "Supabase", "Hive"],
       "liveUrl": "",
       "githubUrl": "https://github.com/KartikSharma4448/Todoup-flutter",
       "imageUrl": "",
       "featured": "true",
-      "order": 8,
+      "order": 1,
       "createdAt": "2026-03-01T00:00:00.000Z"
     },
     {
       "id": "p09-restroqr",
-      "title": "RestroQR – Digital QR Menu Platform",
-      "description": "Digital QR Menu Platform for Restaurants. Enables restaurant owners to create and manage digital menus accessible via QR codes for contactless dining experience.",
-      "technologies": ["TypeScript", "React", "Node.js", "Tailwind CSS"],
-      "liveUrl": "",
-      "githubUrl": "https://github.com/KartikSharma4448/RestroQR",
+      "title": "RestroQR – Free Digital QR Menu & Table Ordering System",
+      "description": "Full-stack restaurant management platform. Owners manage menus, tables & orders via a Flutter Android app. Customers scan a table QR code and place orders directly from their browser — no app download needed. Features multi-table encrypted QR ordering, real-time push notifications, earnings dashboard, and item analytics.",
+      "technologies": ["Flutter", "Dart", "Node.js", "Express", "TypeScript", "PostgreSQL", "Next.js", "Firebase FCM", "Cloudinary"],
+      "liveUrl": "https://restro-qr-peach.vercel.app",
+      "githubUrl": "",
       "imageUrl": "",
       "featured": "true",
-      "order": 9,
+      "order": 4,
       "createdAt": "2026-06-28T00:00:00.000Z"
     },
     {
@@ -120,7 +120,7 @@ export const portfolioData = {
       "githubUrl": "https://github.com/KartikSharma4448/task-tracker",
       "imageUrl": "",
       "featured": "false",
-      "order": 10,
+      "order": 14,
       "createdAt": "2026-06-28T00:00:00.000Z"
     },
     {
@@ -132,7 +132,7 @@ export const portfolioData = {
       "githubUrl": "https://github.com/KartikSharma4448/Hope-Paws",
       "imageUrl": "",
       "featured": "true",
-      "order": 11,
+      "order": 12,
       "createdAt": "2025-12-23T00:00:00.000Z"
     },
     {
@@ -144,7 +144,7 @@ export const portfolioData = {
       "githubUrl": "https://github.com/KartikSharma4448/Rajasthali-website",
       "imageUrl": "",
       "featured": "false",
-      "order": 12,
+      "order": 13,
       "createdAt": "2026-06-21T00:00:00.000Z"
     },
     {
@@ -156,7 +156,7 @@ export const portfolioData = {
       "githubUrl": "",
       "imageUrl": "",
       "featured": "true",
-      "order": 13,
+      "order": 9,
       "createdAt": "2026-05-01T00:00:00.000Z"
     },
     {
@@ -168,7 +168,7 @@ export const portfolioData = {
       "githubUrl": "https://github.com/KartikSharma4448/AutoMagic-Vision",
       "imageUrl": "",
       "featured": "false",
-      "order": 14,
+      "order": 15,
       "createdAt": "2026-03-01T00:00:00.000Z"
     },
     {
@@ -180,7 +180,7 @@ export const portfolioData = {
       "githubUrl": "",
       "imageUrl": "",
       "featured": "true",
-      "order": 15,
+      "order": 8,
       "createdAt": "2026-03-14T00:00:00.000Z"
     }
   ],

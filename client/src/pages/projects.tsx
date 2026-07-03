@@ -1,15 +1,17 @@
 import { useQuery } from "@tanstack/react-query";
-import { ExternalLink, Github, Loader2, FolderOpen, Star } from "lucide-react";
+import { ExternalLink, Github, Loader2, FolderOpen, Star, Info, Download, Smartphone } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { fadeInUp, staggerContainer, staggerItem } from "@/lib/animations";
+import { staggerContainer, staggerItem } from "@/lib/animations";
 import { PageHeader } from "@/components/page-header";
 import { SpotlightCard } from "@/components/motion-primitives";
 import { SEO } from "@/components/seo";
 import { pageKeywords } from "@/lib/seo-keywords";
 import type { Project } from "@shared/schema";
+import { projectDetails } from "@/data/project-details";
 
 const projectColors = [
   "from-blue-500/20 via-blue-600/10 to-transparent",
@@ -62,8 +64,8 @@ export default function Projects() {
           about: "Full stack development and AI project portfolio",
         }}
       />
+
       <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
-        {/* Header */}
         <PageHeader
           eyebrow="portfolio"
           eyebrowIcon={FolderOpen}
@@ -102,65 +104,102 @@ export default function Projects() {
                   animate="animate"
                   className="grid grid-cols-1 lg:grid-cols-2 gap-8"
                 >
-                  {featuredProjects.map((project, idx) => (
-                    <motion.div
-                      key={project.id}
-                      variants={staggerItem}
-                      whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                    >
-                      <SpotlightCard glowColor="rgba(99,102,241,0.14)" className="rounded-xl h-full">
-                      <Card
-                        className="hover-elevate transition-all duration-300 hover:shadow-2xl overflow-hidden group h-full border-border/50"
-                        data-testid={`project-featured-${project.id}`}
+                  {featuredProjects.map((project, idx) => {
+                    const detail = projectDetails[project.id];
+                    return (
+                      <motion.div
+                        key={project.id}
+                        variants={staggerItem}
+                        whileHover={{ y: -6, transition: { duration: 0.2 } }}
                       >
-                        {/* Project preview banner */}
-                        <div className={`w-full h-44 bg-gradient-to-br ${projectColors[idx % projectColors.length]} flex items-center justify-center relative overflow-hidden`}>
-                          <div className="absolute inset-0">
-                            <div className="absolute top-3 left-3 w-14 h-14 rounded-full bg-white/5 blur-xl" />
-                            <div className="absolute bottom-3 right-3 w-20 h-20 rounded-full bg-white/5 blur-xl" />
-                          </div>
-                          <FolderOpen className={`h-14 w-14 ${iconColors[idx % iconColors.length]} opacity-50 group-hover:scale-110 group-hover:opacity-70 transition-all duration-300 relative`} />
-                        </div>
-                        <CardHeader className="pb-2">
-                          <div className="flex items-start justify-between gap-4">
-                            <CardTitle className="text-xl leading-snug">{project.title}</CardTitle>
-                            <Badge className="bg-chart-2/10 text-chart-2 border border-chart-2/20 shrink-0">
-                              ✦ Featured
-                            </Badge>
-                          </div>
-                        </CardHeader>
-                        <CardContent className="space-y-4">
-                          <p className="text-muted-foreground leading-relaxed text-sm">{project.description}</p>
-                          <div className="flex flex-wrap gap-1.5">
-                            {project.technologies.map((tech, techIdx) => (
-                              <Badge key={techIdx} variant="secondary" className="text-xs border border-border/50 transition-transform hover:scale-105">
-                                {tech}
-                              </Badge>
-                            ))}
-                          </div>
-                          <div className="flex gap-3 pt-1">
-                            {project.liveUrl && (
-                              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" data-testid={`link-live-${project.id}`}>
-                                <Button size="sm" className="shadow-sm shadow-primary/20">
-                                  <ExternalLink className="h-4 w-4 mr-2" />
-                                  Live Demo
-                                </Button>
-                              </a>
-                            )}
-                            {project.githubUrl && (
-                              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" data-testid={`link-github-${project.id}`}>
-                                <Button size="sm" variant="outline">
-                                  <Github className="h-4 w-4 mr-2" />
-                                  GitHub
-                                </Button>
-                              </a>
-                            )}
-                          </div>
-                        </CardContent>
-                      </Card>
-                      </SpotlightCard>
-                    </motion.div>
-                  ))}
+                        <SpotlightCard glowColor="rgba(99,102,241,0.14)" className="rounded-xl h-full">
+                          <Card
+                            className="hover-elevate transition-all duration-300 hover:shadow-2xl overflow-hidden group h-full border-border/50"
+                            data-testid={`project-featured-${project.id}`}
+                          >
+                            {/* Banner — real image if available, else gradient */}
+                            <div className="w-full h-44 overflow-hidden relative">
+                              {detail?.banner ? (
+                                <img
+                                  src={detail.banner}
+                                  alt={project.title}
+                                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                />
+                              ) : (
+                                <div className={`w-full h-full bg-gradient-to-br ${projectColors[idx % projectColors.length]} flex items-center justify-center relative`}>
+                                  <div className="absolute inset-0">
+                                    <div className="absolute top-3 left-3 w-14 h-14 rounded-full bg-white/5 blur-xl" />
+                                    <div className="absolute bottom-3 right-3 w-20 h-20 rounded-full bg-white/5 blur-xl" />
+                                  </div>
+                                  <FolderOpen className={`h-14 w-14 ${iconColors[idx % iconColors.length]} opacity-50 group-hover:scale-110 group-hover:opacity-70 transition-all duration-300 relative`} />
+                                </div>
+                              )}
+                            </div>
+
+                            <CardHeader className="pb-2">
+                              <div className="flex items-start justify-between gap-4">
+                                <CardTitle className="text-xl leading-snug">{project.title}</CardTitle>
+                                <Badge className="bg-chart-2/10 text-chart-2 border border-chart-2/20 shrink-0">
+                                  ✦ Featured
+                                </Badge>
+                              </div>
+                            </CardHeader>
+                            <CardContent className="space-y-4">
+                              <p className="text-muted-foreground leading-relaxed text-sm">{project.description}</p>
+                              <div className="flex flex-wrap gap-1.5">
+                                {project.technologies.map((tech, techIdx) => (
+                                  <Badge key={techIdx} variant="secondary" className="text-xs border border-border/50 transition-transform hover:scale-105">
+                                    {tech}
+                                  </Badge>
+                                ))}
+                              </div>
+                              <div className="flex flex-wrap gap-2 pt-1">
+                                {project.liveUrl && (
+                                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" data-testid={`link-live-${project.id}`}>
+                                    <Button size="sm" className="shadow-sm shadow-primary/20">
+                                      <ExternalLink className="h-4 w-4 mr-2" />
+                                      Live Demo
+                                    </Button>
+                                  </a>
+                                )}
+                                {/* Play Store button */}
+                                {detail?.playStoreUrl && (
+                                  <a href={detail.playStoreUrl} target="_blank" rel="noopener noreferrer">
+                                    <Button size="sm" variant="outline" className="border-blue-500/40 text-blue-600 dark:text-blue-400 hover:bg-blue-500/10">
+                                      <Smartphone className="h-4 w-4 mr-2" />
+                                      Play Store
+                                    </Button>
+                                  </a>
+                                )}
+                                {/* APK Download from project details */}
+                                {detail?.apkUrl && (
+                                  <a href={detail.apkUrl} download>
+                                    <Button size="sm" variant="outline" className="border-green-500/40 text-green-600 dark:text-green-400 hover:bg-green-500/10">
+                                      <Download className="h-4 w-4 mr-2" />
+                                      Download APK
+                                    </Button>
+                                  </a>
+                                )}
+                                {/* More Info — navigate to detail page */}
+                                {detail?.slug && (
+                                  <Link href={`/projects/${detail.slug}`}>
+                                    <Button
+                                      size="sm"
+                                      variant="outline"
+                                      className="border-primary/30 text-primary hover:bg-primary/10"
+                                    >
+                                      <Info className="h-4 w-4 mr-2" />
+                                      More Info
+                                    </Button>
+                                  </Link>
+                                )}
+                              </div>
+                            </CardContent>
+                          </Card>
+                        </SpotlightCard>
+                      </motion.div>
+                    );
+                  })}
                 </motion.div>
               </motion.section>
             )}
@@ -189,59 +228,80 @@ export default function Projects() {
                   viewport={{ once: true }}
                   className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
                 >
-                  {otherProjects.map((project, idx) => (
-                    <motion.div
-                      key={project.id}
-                      variants={itemVariants}
-                      whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                    >
-                      <Card
-                        className="hover-elevate transition-all duration-300 hover:shadow-lg group h-full border-border/50 overflow-hidden"
-                        data-testid={`project-${project.id}`}
+                  {otherProjects.map((project, idx) => {
+                    const detail = projectDetails[project.id];
+                    return (
+                      <motion.div
+                        key={project.id}
+                        variants={itemVariants}
+                        whileHover={{ y: -4, transition: { duration: 0.2 } }}
                       >
-                        <div className={`h-1 bg-gradient-to-r ${topBars[idx % topBars.length]}`} />
-                        <CardHeader className="pb-2">
-                          <CardTitle className="flex items-start gap-3 text-lg">
-                            <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${projectColors[idx % projectColors.length]} flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300`}>
-                              <FolderOpen className={`h-4 w-4 ${iconColors[idx % iconColors.length]}`} />
+                        <Card
+                          className="hover-elevate transition-all duration-300 hover:shadow-lg group h-full border-border/50 overflow-hidden"
+                          data-testid={`project-${project.id}`}
+                        >
+                          <div className={`h-1 bg-gradient-to-r ${topBars[idx % topBars.length]}`} />
+                          <CardHeader className="pb-2">
+                            <CardTitle className="flex items-start gap-3 text-lg">
+                              <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${projectColors[idx % projectColors.length]} flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300`}>
+                                <FolderOpen className={`h-4 w-4 ${iconColors[idx % iconColors.length]}`} />
+                              </div>
+                              <span className="leading-tight">{project.title}</span>
+                            </CardTitle>
+                          </CardHeader>
+                          <CardContent className="space-y-3">
+                            <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
+                            <div className="flex flex-wrap gap-1.5">
+                              {project.technologies.slice(0, 4).map((tech, techIdx) => (
+                                <Badge key={techIdx} variant="outline" className="text-xs transition-transform hover:scale-105">
+                                  {tech}
+                                </Badge>
+                              ))}
+                              {project.technologies.length > 4 && (
+                                <Badge variant="outline" className="text-xs text-muted-foreground">
+                                  +{project.technologies.length - 4}
+                                </Badge>
+                              )}
                             </div>
-                            <span className="leading-tight">{project.title}</span>
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent className="space-y-3">
-                          <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
-                          <div className="flex flex-wrap gap-1.5">
-                            {project.technologies.slice(0, 4).map((tech, techIdx) => (
-                              <Badge key={techIdx} variant="outline" className="text-xs transition-transform hover:scale-105">
-                                {tech}
-                              </Badge>
-                            ))}
-                            {project.technologies.length > 4 && (
-                              <Badge variant="outline" className="text-xs text-muted-foreground">
-                                +{project.technologies.length - 4}
-                              </Badge>
-                            )}
-                          </div>
-                          <div className="flex gap-2 pt-1">
-                            {project.liveUrl && (
-                              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" data-testid={`link-live-${project.id}`}>
-                                <Button size="icon" variant="ghost" className="h-8 w-8 hover:text-primary transition-colors">
-                                  <ExternalLink className="h-4 w-4" />
-                                </Button>
-                              </a>
-                            )}
-                            {project.githubUrl && (
-                              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" data-testid={`link-github-${project.id}`}>
-                                <Button size="icon" variant="ghost" className="h-8 w-8 hover:text-foreground transition-colors">
-                                  <Github className="h-4 w-4" />
-                                </Button>
-                              </a>
-                            )}
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
-                  ))}
+                            <div className="flex gap-2 pt-1">
+                              {project.liveUrl && (
+                                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" data-testid={`link-live-${project.id}`}>
+                                  <Button size="icon" variant="ghost" className="h-8 w-8 hover:text-primary transition-colors">
+                                    <ExternalLink className="h-4 w-4" />
+                                  </Button>
+                                </a>
+                              )}
+                              {detail?.playStoreUrl && (
+                                <a href={detail.playStoreUrl} target="_blank" rel="noopener noreferrer">
+                                  <Button size="icon" variant="ghost" className="h-8 w-8 hover:text-blue-500 transition-colors">
+                                    <Smartphone className="h-4 w-4" />
+                                  </Button>
+                                </a>
+                              )}
+                              {project.githubUrl && (
+                                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" data-testid={`link-github-${project.id}`}>
+                                  <Button size="icon" variant="ghost" className="h-8 w-8 hover:text-foreground transition-colors">
+                                    <Github className="h-4 w-4" />
+                                  </Button>
+                                </a>
+                              )}
+                              {detail?.slug && (
+                                <Link href={`/projects/${detail.slug}`}>
+                                  <Button
+                                    size="icon"
+                                    variant="ghost"
+                                    className="h-8 w-8 hover:text-primary transition-colors"
+                                  >
+                                    <Info className="h-4 w-4" />
+                                  </Button>
+                                </Link>
+                              )}
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </motion.div>
+                    );
+                  })}
                 </motion.div>
               </motion.section>
             )}

@@ -250,6 +250,98 @@ export default function AdminProjects() {
                     )}
                   />
 
+                  {/* APK Download Link */}
+                  <FormField
+                    control={form.control}
+                    name="apkUrl"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="flex items-center gap-2">
+                          <Download className="h-4 w-4 text-green-500" />
+                          APK / App Download Link (Optional)
+                        </FormLabel>
+                        <FormControl>
+                          <Input {...field} value={field.value ?? ""} placeholder="https://drive.google.com/... or Play Store link" data-testid="input-apk-url" />
+                        </FormControl>
+                        <p className="text-xs text-muted-foreground">Google Drive APK link or Play Store URL</p>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  {/* Demo Account */}
+                  <FormField
+                    control={form.control}
+                    name="demoAccount"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="flex items-center gap-2">
+                          <KeyRound className="h-4 w-4 text-yellow-500" />
+                          Demo Account (Optional)
+                        </FormLabel>
+                        <FormControl>
+                          <Input {...field} value={field.value ?? ""} placeholder='{"email":"demo@app.com","password":"demo123"}' data-testid="input-demo-account" />
+                        </FormControl>
+                        <p className="text-xs text-muted-foreground">JSON format: {`{"email":"...","password":"..."}`} — shown as copyable credentials on project page</p>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  {/* Screenshots */}
+                  <FormField
+                    control={form.control}
+                    name="screenshots"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="flex items-center gap-2">
+                          <Image className="h-4 w-4 text-blue-500" />
+                          Screenshots (Optional)
+                        </FormLabel>
+                        <div className="flex gap-2">
+                          <Input
+                            value={screenshotInput}
+                            onChange={(e) => setScreenshotInput(e.target.value)}
+                            placeholder="https://... (image URL)"
+                            onKeyPress={(e) => e.key === "Enter" && (e.preventDefault(), addScreenshot())}
+                            data-testid="input-screenshot"
+                          />
+                          <Button type="button" onClick={addScreenshot} data-testid="button-add-screenshot">
+                            Add
+                          </Button>
+                        </div>
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          {(field.value || []).map((url, index) => (
+                            <Badge key={index} variant="secondary" className="max-w-[200px] truncate">
+                              {url}
+                              <button type="button" onClick={() => removeScreenshot(index)} className="ml-2">×</button>
+                            </Badge>
+                          ))}
+                        </div>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  {/* Technical README */}
+                  <FormField
+                    control={form.control}
+                    name="readmeContent"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="flex items-center gap-2">
+                          <FileText className="h-4 w-4 text-purple-500" />
+                          Technical README (Optional)
+                        </FormLabel>
+                        <FormControl>
+                          <Textarea {...field} value={field.value ?? ""} className="min-h-40 font-mono text-xs" placeholder="# Project Title&#10;&#10;## Tech Stack&#10;- Flutter, FastAPI&#10;&#10;## Setup&#10;..." data-testid="input-readme" />
+                        </FormControl>
+                        <p className="text-xs text-muted-foreground">Markdown supported. Shown as collapsible Technical README on project page.</p>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
                   <FormField
                     control={form.control}
                     name="featured"
