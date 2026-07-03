@@ -1,6 +1,23 @@
+# robots.txt — kartiksharma.site
+# Allow all search engine crawlers
+
 User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /auth
+Disallow: /api/
 
+# Google
+User-agent: Googlebot
+Allow: /
+Disallow: /admin
+Disallow: /auth
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Disallow: /admin
+Disallow: /auth
+
+# Sitemap location
 Sitemap: https://kartiksharma.site/sitemap.xml
