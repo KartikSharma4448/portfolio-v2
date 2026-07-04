@@ -3,7 +3,8 @@ import { Link } from "wouter";
 import {
   ArrowDown, Mail, ExternalLink, FolderOpen,
   Award, Calendar, Star, Code2, Layers, BrainCircuit, Globe,
-  Terminal, Database, ArrowRight, Sparkles, Zap, ChevronRight
+  Terminal, Database, ArrowRight, Sparkles, Zap, ChevronRight,
+  Smartphone, Download, Info
 } from "lucide-react";
 import {
   SiReact, SiTypescript, SiPython, SiNodedotjs, SiGit,
@@ -20,6 +21,7 @@ import { SEO } from "@/components/seo";
 import { pageKeywords, personSchema } from "@/lib/seo-keywords";
 import { Magnetic, SpotlightCard } from "@/components/motion-primitives";
 import type { Project, Certificate } from "@shared/schema";
+import { projectDetails } from "@/data/project-details";
 
 const roles = ["Full Stack Developer", "Freelancer", "Cloud Enthusiast", "AI Explorer", "Problem Solver"];
 
@@ -453,18 +455,28 @@ export default function Home() {
                     {/* top gradient bar */}
                     <div className="h-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
 
-                    {/* project image placeholder */}
-                    <div className="w-full h-44 bg-gradient-to-br from-blue-500/10 via-violet-500/10 to-cyan-500/10 flex items-center justify-center relative overflow-hidden">
-                      <div className="absolute inset-0">
-                        <div className="absolute top-3 left-3 w-24 h-24 rounded-full bg-blue-500/20 blur-2xl" />
-                        <div className="absolute bottom-3 right-3 w-20 h-20 rounded-full bg-violet-500/20 blur-2xl" />
-                      </div>
-                      <motion.div
-                        animate={{ rotate: [0, 5, -5, 0], scale: [1, 1.05, 1] }}
-                        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                      >
-                        <FolderOpen className="h-16 w-16 text-primary/40" />
-                      </motion.div>
+                    {/* project banner image or gradient fallback */}
+                    <div className="w-full h-44 flex items-center justify-center relative overflow-hidden">
+                      {projectDetails[project.id]?.banner ? (
+                        <img
+                          src={projectDetails[project.id].banner}
+                          alt={project.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gradient-to-br from-blue-500/10 via-violet-500/10 to-cyan-500/10 flex items-center justify-center relative">
+                          <div className="absolute inset-0">
+                            <div className="absolute top-3 left-3 w-24 h-24 rounded-full bg-blue-500/20 blur-2xl" />
+                            <div className="absolute bottom-3 right-3 w-20 h-20 rounded-full bg-violet-500/20 blur-2xl" />
+                          </div>
+                          <motion.div
+                            animate={{ rotate: [0, 5, -5, 0], scale: [1, 1.05, 1] }}
+                            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                          >
+                            <FolderOpen className="h-16 w-16 text-primary/40" />
+                          </motion.div>
+                        </div>
+                      )}
                     </div>
 
                     <div className="p-5">
@@ -487,18 +499,42 @@ export default function Home() {
                           </Badge>
                         )}
                       </div>
-                      <div className="flex gap-2">
+                      <div className="flex flex-wrap gap-2">
                         {project.liveUrl && (
-                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" data-testid={`link-live-project-${project.id}`}>
+                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                             <Button size="sm" className="h-8 text-xs bg-gradient-to-r from-blue-600 to-violet-600 border-0">
                               <ExternalLink className="h-3 w-3 mr-1" />
                               Live Demo
                             </Button>
                           </a>
                         )}
-                        {project.githubUrl && (
-                          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" data-testid={`link-github-project-${project.id}`}>
-                            <Button size="sm" variant="outline" className="h-8 text-xs border-border/60 hover:border-white/40 hover:text-white">
+                        {projectDetails[project.id]?.playStoreUrl && (
+                          <a href={projectDetails[project.id].playStoreUrl} target="_blank" rel="noopener noreferrer">
+                            <Button size="sm" variant="outline" className="h-8 text-xs border-blue-500/40 text-blue-600 dark:text-blue-400 hover:bg-blue-500/10">
+                              <Smartphone className="h-3 w-3 mr-1" />
+                              Play Store
+                            </Button>
+                          </a>
+                        )}
+                        {projectDetails[project.id]?.apkUrl && (
+                          <a href={projectDetails[project.id].apkUrl} download>
+                            <Button size="sm" variant="outline" className="h-8 text-xs border-green-500/40 text-green-600 dark:text-green-400 hover:bg-green-500/10">
+                              <Download className="h-3 w-3 mr-1" />
+                              APK
+                            </Button>
+                          </a>
+                        )}
+                        {projectDetails[project.id]?.slug && (
+                          <Link href={`/projects/${projectDetails[project.id].slug}`}>
+                            <Button size="sm" variant="outline" className="h-8 text-xs border-primary/30 text-primary hover:bg-primary/10">
+                              <Info className="h-3 w-3 mr-1" />
+                              More Info
+                            </Button>
+                          </Link>
+                        )}
+                        {project.githubUrl && !projectDetails[project.id]?.slug && (
+                          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                            <Button size="sm" variant="outline" className="h-8 text-xs border-border/60">
                               <SiGithub className="h-3 w-3 mr-1" />
                               Code
                             </Button>
