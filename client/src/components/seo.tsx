@@ -13,7 +13,7 @@ interface SEOProps {
 }
 
 const SITE_NAME = 'Kartik Sharma';
-const SITE_URL = 'https://kartiksharma.site';
+const SITE_URL = 'https://kartiksharma.site/';
 const DEFAULT_OG = 'https://kartiksharma.site/profile.png';
 
 export function SEO({
