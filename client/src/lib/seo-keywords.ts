@@ -194,6 +194,17 @@ export const pageKeywords = {
     "ready made web templates",
     "developer products India",
     "website templates buy India",
+    "free portfolio templates",
+    "free portfolio website templates",
+    "open source portfolio templates",
+    "free HTML portfolio template",
+    "download portfolio template free",
+    "developer portfolio template free",
+    "free website templates GitHub",
+    "portfolio templates 2026",
+    "best free portfolio websites",
+    "responsive portfolio template free",
+    "free personal website template",
   ]),
 
   blog: kw(brandKeywords, blogKeywords, [
@@ -202,6 +213,11 @@ export const pageKeywords = {
     "hackathon blog India",
     "VGU student blog",
     "coding tutorials India",
+    "free portfolio templates blog",
+    "open source portfolio collection",
+    "free website templates download",
+    "portfolio design ideas",
+    "developer portfolio tips",
   ]),
 
   contact: kw(brandKeywords, serviceKeywords, [

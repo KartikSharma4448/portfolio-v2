@@ -487,6 +487,31 @@ export const portfolioData = {
   ],
   "products": [
     {
+      "id": "prod-free-portfolios",
+      "title": "40+ Free Portfolio Templates — Open Source Collection",
+      "description": "A curated collection of 40+ beautiful, open-source portfolio website templates — completely FREE! Discover stunning designs for developers, designers, freelancers, and students. All templates are responsive, modern, and easy to customize. One-click download from GitHub and deploy your personal portfolio in minutes.",
+      "category": "portfolio",
+      "price": "FREE",
+      "imageUrl": "",
+      "demoUrl": "https://github.com/KartikSharma4448/Publicportfolios",
+      "features": [
+        "40+ Beautiful Portfolio Templates",
+        "100% Free & Open Source",
+        "Responsive & Mobile-Friendly",
+        "HTML, CSS & JavaScript Based",
+        "Easy to Customize & Deploy",
+        "Modern UI/UX Designs",
+        "Dark & Light Theme Options",
+        "Developer & Designer Portfolios",
+        "One-Click GitHub Download",
+        "No Signup Required"
+      ],
+      "technologies": ["HTML5", "CSS3", "JavaScript", "React", "Tailwind CSS", "Bootstrap"],
+      "featured": "true",
+      "order": "0",
+      "createdAt": "2026-07-27T00:00:00.000Z"
+    },
+    {
       "id": "prod-01",
       "title": "VCC ERP – Coaching Management App",
       "description": "Production-ready ERP system for coaching institutes. Features Flutter mobile app for students/teachers, Next.js admin dashboard, and NestJS backend. Includes attendance, fee tracking, quizzes, timetable, AI Tutor, and performance analytics. Fully customizable with your institute branding.",
@@ -563,6 +588,19 @@ export const portfolioData = {
     }
   ],
   "blogPosts": [
+    {
+      "id": "blog-free-portfolio-templates",
+      "title": "40+ Free Portfolio Website Templates — Download & Customize in Minutes",
+      "slug": "free-portfolio-website-templates-open-source",
+      "excerpt": "Looking for a stunning portfolio website but don't want to spend money? I've curated 40+ beautiful, open-source portfolio templates — all completely FREE. Download from GitHub and launch your personal portfolio in minutes.",
+      "content": "# 40+ Free Portfolio Website Templates — Download & Customize in Minutes\n\n## Why Every Developer & Designer Needs a Portfolio\n\nIn today's competitive tech industry, having a personal portfolio website is no longer optional — it's essential. Whether you're a developer, designer, freelancer, or student, your portfolio is the first thing recruiters, clients, and collaborators see. But building one from scratch takes time, and buying premium templates costs money.\n\n**That's why I created this free collection.**\n\n## Introducing: 40+ Free Open-Source Portfolio Templates\n\nI've collected and organized **40+ beautiful, production-ready portfolio website templates** in one single GitHub repository — completely **FREE** and **open source**. No signup, no paywall, no catch.\n\n🔗 **[Download All Templates on GitHub →](https://github.com/KartikSharma4448/Publicportfolios)**\n\n## What's Included?\n\nThis collection features a diverse range of portfolio designs:\n\n- 🎨 **Minimalist portfolios** — Clean, typography-focused designs perfect for writers and designers\n- 💻 **Developer portfolios** — Code-themed templates with project showcases and GitHub integration\n- 🌈 **Creative portfolios** — Bold, colorful designs with animations and interactive elements\n- 🌙 **Dark mode portfolios** — Sleek, modern dark-themed templates\n- 📱 **Responsive portfolios** — Mobile-first designs that look amazing on every device\n- 🚀 **Single-page portfolios** — Fast-loading, single-scroll designs\n- 📄 **Multi-page portfolios** — Full websites with dedicated project, about, and contact pages\n\n## Key Features of Every Template\n\n| Feature | Details |\n|---------|---------|\n| **Price** | 100% FREE |\n| **Source Code** | Fully open source on GitHub |\n| **Responsive** | Works on all devices and screen sizes |\n| **Customizable** | Easy to modify colors, content, and layout |\n| **Technologies** | HTML5, CSS3, JavaScript, React, Tailwind CSS |\n| **License** | Open source — use for personal or commercial projects |\n| **No Signup** | Download directly from GitHub, no account needed |\n\n## How to Download & Use\n\n### Step 1: Visit the Repository\nGo to [github.com/KartikSharma4448/Publicportfolios](https://github.com/KartikSharma4448/Publicportfolios)\n\n### Step 2: Clone or Download\n```bash\ngit clone https://github.com/KartikSharma4448/Publicportfolios.git\n```\nOr click the green **Code** button → **Download ZIP**\n\n### Step 3: Pick Your Template\nBrowse through the folders and pick the design you love. Each template is in its own folder with all the files you need.\n\n### Step 4: Customize\nOpen the files in VS Code or any editor. Replace the placeholder content with your own:\n- Update your name, bio, and skills\n- Add your project screenshots\n- Link your social profiles (GitHub, LinkedIn, Twitter)\n- Change colors to match your brand\n\n### Step 5: Deploy for FREE\nDeploy your portfolio for free using:\n- **GitHub Pages** — Free hosting directly from your repository\n- **Vercel** — One-click deploy with a custom domain\n- **Netlify** — Drag-and-drop deployment\n\n## Who Is This For?\n\n✅ **Students** looking to build their first portfolio for campus placements\n✅ **Developers** who want a professional online presence\n✅ **Designers** showcasing their creative work\n✅ **Freelancers** looking to attract clients\n✅ **Job seekers** wanting to stand out from other applicants\n✅ **Anyone** who wants a beautiful personal website — for FREE\n\n## Technologies Used\n\nThe templates in this collection are built with industry-standard technologies:\n\n- **HTML5** — Semantic, accessible markup\n- **CSS3** — Modern layouts with Flexbox, Grid, and animations\n- **JavaScript** — Interactive elements and smooth transitions\n- **React** — Component-based templates for advanced users\n- **Tailwind CSS** — Utility-first styling for rapid customization\n- **Bootstrap** — Classic responsive framework templates\n\n## Why I Built This\n\nAs a full stack developer and founder of CodeUpPath, I believe that everyone deserves access to great design tools — regardless of budget. I've seen too many talented developers and designers without an online presence simply because they couldn't afford a template or didn't have time to build one from scratch.\n\nThis collection solves that problem. **40+ templates. Zero cost. Unlimited potential.**\n\n## Support This Project\n\nIf you find these templates useful:\n- ⭐ **Star the repository** on GitHub to help others discover it\n- 🔀 **Fork it** and customize your own version\n- 📢 **Share it** with your developer friends and communities\n- 💬 **Open an issue** if you have suggestions or want to contribute\n\n## Download Now\n\n🔗 **[github.com/KartikSharma4448/Publicportfolios](https://github.com/KartikSharma4448/Publicportfolios)**\n\nDon't let the lack of a portfolio hold you back. Pick a template, customize it, deploy it — and start showcasing your work to the world. **It's completely free.**\n\n---\n\n*Built with ❤️ by [Kartik Sharma](https://kartiksharma.site) — Full Stack Developer from Jaipur, India*",
+      "tags": ["free portfolio templates", "open source portfolio", "portfolio website", "developer portfolio", "free website templates", "GitHub", "HTML CSS templates", "web development"],
+      "coverImage": "",
+      "published": "true",
+      "publishedAt": "2026-07-27T00:00:00.000Z",
+      "createdAt": "2026-07-27T00:00:00.000Z",
+      "updatedAt": "2026-07-27T00:00:00.000Z"
+    },
     {
       "id": "blog-vgu-ai-campus-review",
       "title": "Marketing Excellence vs Student Reality: A Critical Review of VGU's Google AI Campus Initiative",
